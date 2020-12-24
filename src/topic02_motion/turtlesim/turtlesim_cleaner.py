@@ -205,12 +205,20 @@ if __name__ == '__main__':
         # rotate (velocity_publisher, angular_speed_degree=10, relative_angle_degree=90, clockwise=False)
         # go_to_goal(velocity_publisher, x_goal=9, y_goal=9)
         # setDesiredOrientation(publisher, speed_in_degree=30, desired_absolute_angle_degree=90)
+        
+        # parameters from launch file
+        x_goal = rospy.get_param("x_goal")
+        y_goal = rospy.get_param("y_goal")
+        print('x_goal =', x_goal)
+        print('y_goal =', y_goal)
+        go_to_goal(velocity_publisher, x_goal, y_goal)
 
-        opt = int(input("[1]-spiral cleaning | [2]-grid cleaning :"))
-        if opt == 1:
-            spiralClean(velocity_publisher, wk=4, rk=1)
-        elif opt == 2:
-            gridClean(velocity_publisher)
+        # rutina
+        # opt = int(input("[1]-spiral cleaning | [2]-grid cleaning :"))
+        # if opt == 1:
+        #     spiralClean(velocity_publisher, wk=4, rk=1)
+        # elif opt == 2:
+        #     gridClean(velocity_publisher)
 
     except rospy.ROSInterruptException:
         rospy.loginfo("node terminated.")

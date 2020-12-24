@@ -1,0 +1,9 @@
+<launch>
+
+ <!-- Turtlesim Node-->
+  <node pkg="turtlesim" type="turtlesim_node" name="turtlesim_node"/>
+
+ <!-- Teleop node -->
+  <node pkg="turtlesim" type="turtle_teleop_key" name="turtlesim_teleop_node"/>
+
+</launch>

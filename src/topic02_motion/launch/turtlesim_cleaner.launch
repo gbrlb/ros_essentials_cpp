@@ -1,0 +1,12 @@
+<launch>
+  <!-- include other  launch file -->
+  <include file="$(find ros_essentials_cpp)src/topic02_motion/launch/turtlesim_teleop.launch" />
+
+  <!-- define parameters before call the node-->
+  <param name="x_goal" value="3.0"/>
+  <param name="y_goal" value="4.0"/>
+
+  <!-- excecute the node -->
+  <node pkg="ros_essentials_cpp" type="turtlesim_cleaner.py" name="clean_node" output="screen"/>
+
+</launch>
